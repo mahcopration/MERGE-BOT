@@ -67,7 +67,7 @@ class MergeBot(Client):
 mergeApp = MergeBot(
     name="merge-bot",
     api_hash=Config.API_HASH,
-    api_id=int(Config.TELEGRAM_API),
+    api_id=Config.TELEGRAM_API,
     bot_token=Config.BOT_TOKEN,
     workers=300,
     plugins=dict(root="plugins"),
@@ -430,7 +430,7 @@ async def media_extracter(c: Client, m: Message):
             mid=rmess.id
             file_name = media.file_name
             if file_name is None:
-                await m.reply("File name not found; goto @Mahsoommjm")
+                await m.reply("File name not found; goto @yashoswalyo")
                 return
             markup = bMaker.makebuttons(
                 set1=["Audio", "Subtitle", "Cancel"],
@@ -488,13 +488,13 @@ async def about_handler(c: Client, m: Message):
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("LEECH GROUP", url="https://t.me/Free_Leech_Group_4GB")],
+                [InlineKeyboardButton("Developer", url="https://t.me/Mahsoommjm")],
                 [
                     InlineKeyboardButton(
-                        "UPDATES", url="https://t.me/Call_me_futurepilot"
+                        "Source Code", url="https://t.me/Mahsoommjm"
                     ),
                     InlineKeyboardButton(
-                        "OWNER", url=f"https://t.me/{Config.OWNER_USERNAME}"
+                        "🤔Deployed By🤔", url=f"https://t.me/{Config.OWNER_USERNAME}"
                     ),
                 ],
                 [InlineKeyboardButton("Close 🔐", callback_data="close")],
@@ -741,7 +741,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://t.me/Mahsoommjm'>this BOT</a>",
+                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://github.com/yashoswalyo/merge-bot'>this repo</a>",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
